@@ -1,0 +1,52 @@
+//preOrder - http://www.algorithmsandme.com/iterative-preorder-traversal/
+public void preorder(TreeNode root){
+       Stack<TreeNode> stack = new Stack<>();
+        
+       if(root == null) return ;
+ 
+       TreeNode currentNode = null;
+       /* Step 1 : Start with root */
+       stack.push(root);
+ 
+       while(!stack.isEmpty()){
+           /* Step 5 : Pop the node */
+           currentNode = stack.pop();
+            
+           /* Step 2 : Print the node */
+           System.out.println(currentNode.getValue());
+            
+           /* Step 3: Push right child first */
+           if(currentNode.getRight() != null){
+               stack.push(currentNode.getRight());
+           }
+           /* Step 4: Push left child */
+           if(currentNode.getLeft() != null){
+               stack.push(currentNode.getLeft());
+           }
+       }
+   }
+
+//inorder - https://www.educative.io/edpresso/how-to-perform-an-iterative-inorder-traversal-of-a-binary-tree
+public static void inOrderTraversal(Node root)
+    {
+      Stack<Node> stack = new Stack();
+      Node curr = root;
+      while (!stack.empty() || curr != null)
+      {
+        if (curr != null)
+        {
+          stack.push(curr);
+          curr = curr.left;
+        }
+        else
+        {
+          curr = stack.pop();
+          System.out.print(curr.data + " ");
+          curr = curr.right;
+        }
+      }
+    }
+
+//postorder -  
+
+
