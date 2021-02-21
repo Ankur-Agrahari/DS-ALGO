@@ -1,0 +1,20 @@
+//breadth first search
+public void bfs(TreeNode root) {
+		Queue<TreeNode> queue = new LinkedList<TreeNode>();
+		queue.offer(root);
+		while (!queue.isEmpty()) {
+			TreeNode treeNode = queue.poll();
+			if (treeNode.left != null) {
+				if (treeNode.right == null) {
+					System.out.println(treeNode.left.val);
+				}
+				queue.offer(treeNode.left);
+			}
+			if (treeNode.right != null) {
+				if (treeNode.left == null) {
+					System.out.println(treeNode.right.val);
+				}
+				queue.offer(treeNode.right);
+			}
+		}
+	}
